@@ -29,8 +29,8 @@ pipeline {
                      ${SCANNER_HOME}/bin/sonar-scanner 
                       -Dsonar.token=a8fa75bba1a4115aa68ab1083941684a7ba0234b 
                       -Dsonar.host.url=https://sonarcloud.io/
-                      -Dsonar.organization=saiderny01 \
-                      -Dsonar.projectKey=saiderny01_irctc \
+                      -Dsonar.organization=saidemny01 \
+                      -Dsonar.projectKey=saidermy01_irctc \
                       -Dsonar.projectName=irctc \
                       -Dsonar.sources=. \
                       -Dsonar.java.binaries=target/classes

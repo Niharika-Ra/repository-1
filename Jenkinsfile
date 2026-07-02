@@ -24,17 +24,18 @@ pipeline {
                 SCANNER_HOME = tool 'sonarqube_server'
             }
             steps{
-                withSonarQubeEnv('sonarqube_server') {
-                    sh """
-                     ${SCANNER_HOME}/bin/sonar-scanner 
-                      -Dsonar.token=8c4633c070d7832b19740377879178127b98c1a9
-                      -Dsonar.host.url=https://sonarcloud.io/
-                      -Dsonar.organization=saidemny01 \
-                      -Dsonar.projectKey=saidermy01_irctc \
-                      -Dsonar.projectName=irctc \
-                      -Dsonar.sources=. \
-                      -Dsonar.java.binaries=target/classes
-       """
+                dir('cloning')
+                    withSonarQubeEnv('sonarqube_server') {
+                        sh """
+                         ${SCANNER_HOME}/bin/sonar-scanner 
+                          -Dsonar.token=8c4633c070d7832b19740377879178127b98c1a9
+                          -Dsonar.host.url=https://sonarcloud.io/
+                          -Dsonar.organization=saidemny01 \
+                          -Dsonar.projectKey=saidermy01_irctc \
+                          -Dsonar.projectName=irctc \
+                          -Dsonar.sources=. \
+                          -Dsonar.java.binaries=target/classes
+                        """
                 }
             }
         }

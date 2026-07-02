@@ -25,7 +25,7 @@ pipeline {
             }
             steps{
                 withSonarQubeEnv('sonarqube_server') {
-                    sh "${SCANNER_HOME}/bin/sonar-scanner"
+                    sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.token=a8fa75bba1a4115aa68ab1083941684a7ba0234b"
                 }
             }
         }

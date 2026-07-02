@@ -1,0 +1,50 @@
+For queries/bug reports, please contact kostas.kougios@googlemail.com
+
+This is the main directory of the source code of the Cloning library.
+
+In order to create the Eclipse project, run "mvn eclipse:eclipse". You will
+need Maven 2.2 or higher to run the above command. Please visit the Maven
+website for detailed instructions:
+
+http://maven.apache.org/
+
+Once the command has been successfully executed, you may simply import the
+project to your workspace, using the included launch configurations to run
+some of the test suites. Alternatively, you can right-click on a test suite
+or the whole project and select "Run As > JUnit Test".
+
+Happy hacking!
+
+--- Only for maintainers ---
+
+To generate a signed release bundle for the Sonatype Central Publisher Portal,
+run:
+
+mvn -B clean package gpg:sign repository:bundle-create
+
+Before running this, make sure you have a private GPG key available and export
+its passphrase for non-interactive signing:
+
+export MAVEN_GPG_PASSPHRASE="your-gpg-passphrase"
+
+If you do not already have a key, create one first:
+
+gpg --batch --pinentry-mode loopback --passphrase "$MAVEN_GPG_PASSPHRASE" \
+  --quick-generate-key "Your Name <you@example.com>" ed25519 sign 0
+
+Publish to Sonatype Central with:
+
+mvn -B -P sonatype-deploy deploy
+
+This requires a Sonatype Central user token in your Maven settings, for example:
+
+<server>
+  <id>central</id>
+  <username>YOUR_SONATYPE_TOKEN_USERNAME</username>
+  <password>YOUR_SONATYPE_TOKEN_PASSWORD</password>
+</server>
+
+Create the token from the Sonatype Central Portal before publishing. Please do
+not forget to distribute the public key to a key server (for example
+hkp://pgp.mit.edu) if the signed bundle is to be accepted in Maven Central.
+ 

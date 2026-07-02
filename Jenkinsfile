@@ -13,7 +13,7 @@ pipeline {
         stage('build') {
             steps {
                 dir('cloning') {// Pulls the latest code from your repository
-                    sh 'mvn clean deploy'
+                    sh 'mvn clean verify'
                 }
             }
         }

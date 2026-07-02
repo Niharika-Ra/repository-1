@@ -1,6 +1,9 @@
 pipeline {
     agent any 
-
+    
+    tools {
+        jdk 'JAVA_HOME'
+    }
     environment {
         // Defines the SonarQube server environment configured in Jenkins
         PATH= "/opt/maven/bin:$PATH"

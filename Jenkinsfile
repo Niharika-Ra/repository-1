@@ -26,7 +26,7 @@ pipeline {
             steps{
                 dir('cloning')
                     withSonarQubeEnv('sonarqube_server') {
-                        sh """
+                        sh '''
                          ${SCANNER_HOME}/bin/sonar-scanner 
                           -Dsonar.token=8c4633c070d7832b19740377879178127b98c1a9
                           -Dsonar.host.url=https://sonarcloud.io/
@@ -35,7 +35,7 @@ pipeline {
                           -Dsonar.projectName=irctc \
                           -Dsonar.sources=. \
                           -Dsonar.java.binaries=target/classes
-                        """
+                        '''
                 }
             }
         }

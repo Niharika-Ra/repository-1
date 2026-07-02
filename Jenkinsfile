@@ -30,7 +30,7 @@ pipeline {
                           -Dsonar.token=8c4633c070d7832b19740377879178127b98c1a9 \
                           -Dsonar.host.url=https://sonarcloud.io \
                           -Dsonar.organization=saidemy01 \
-                          -Dsonar.projectKey=saidemy01_irctc \
+                          -Dsonar.projectKey=irctc \
                           -Dsonar.projectName=irctc \
                           -Dsonar.sources=. \
                           -Dsonar.java.binaries=target/classes

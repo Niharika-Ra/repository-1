@@ -9,8 +9,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                // Pulls the latest code from your repository
-                sh 'mvn clear deploy'
+                dir('repository-1') {// Pulls the latest code from your repository
+                    sh 'mvn clear deploy'
+                }
             }
         }
 

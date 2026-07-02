@@ -27,7 +27,7 @@ pipeline {
                     withSonarQubeEnv('sonarqube_server') {
                         sh '''
                         ${SCANNER_HOME}/bin/sonar-scanner \
-                          -Dsonar.token=8c4633c070d7832b19740377879178127b98c1a9 \
+                          -Dsonar.token=8619b2e146aa05c570cdbbc5d6ed3e1e338e08f4 \
                           -Dsonar.host.url=https://sonarcloud.io \
                           -Dsonar.organization=saidemy01 \
                           -Dsonar.projectKey=irctc \

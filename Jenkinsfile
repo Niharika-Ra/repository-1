@@ -24,7 +24,7 @@ pipeline {
                 SCANNER_HOME = tool 'sonarqube_server'
             }
             steps{
-                dir('cloning')
+                dir('cloning') {
                     withSonarQubeEnv('sonarqube_server') {
                         sh '''
                          ${SCANNER_HOME}/bin/sonar-scanner 
@@ -40,4 +40,5 @@ pipeline {
             }
         }
     }
+}
 }
